@@ -9,6 +9,8 @@ import connectDB from "./config/db.js";
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 // Explicit CORS setup
 app.use(
   cors({
