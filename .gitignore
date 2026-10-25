@@ -7,6 +7,9 @@ node_modules/
 .env.*
 !.env.example
 
+# Environment files
+.env*
+
 # Logs
 logs/
 *.log
