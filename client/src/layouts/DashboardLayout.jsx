@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Sidebar from '../components/dashboard/Sidebar'
 import { Outlet } from 'react-router-dom'
 
@@ -7,17 +7,14 @@ import {getCurrentUser} from "../services/auth.service"
 const DashboardLayout = () => {
 
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getUser = async () => {
       try {
         const response = await getCurrentUser()
         setUser(response.data.user)
-      } catch (error) {
+      } catch {
         setUser(null)
-      } finally {
-        setLoading(false)
       }
     };
 
